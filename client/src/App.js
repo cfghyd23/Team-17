@@ -8,12 +8,15 @@ const campaigns = [{
 }, {
   name: 'Blood Donation Awareness Run',
   day: '6th June, Necklace Road'
+},{
+  name: 'Blood donor drive',
+  day: '17th July, Hitech City'
 },]
 const App = () => {
   return (
       <div className='container'>
          <Campaigns value={ campaigns }/>
-      <img src="./volunteersImg.jpg" alt="img"/>
+      <img src={require('./volunteersImg.jpg')} style={{ width: 900, height: 300 }}  class="center" className="img" alt="img"/>
       </div>
   )
 }
