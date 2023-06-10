@@ -7,8 +7,8 @@ const CampaignData = ({ Campaign }) => {
     >
       <h3>
         {Campaign.name}{' '}
-        <Button color='green' text='Accept' />
-        <Button color='red' text='Reject' />
+        {/* <Button color='green' text='Accept' />
+        <Button color='red' text='Reject' /> */}
       </h3>
       <p>{Campaign.day}</p>
     </div>

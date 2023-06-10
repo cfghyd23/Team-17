@@ -16,7 +16,7 @@ const App = () => {
   return (
       <div className='container'>
          <Campaigns value={ campaigns }/>
-      <img src={require('./volunteersImg.jpg')} style={{ width: 900, height: 300 }}  class="center" className="img" alt="img"/>
+      {/* <img src={require('./volunteersImg.jpg')} style={{ width: 900, height: 300 }}  class="center" className="img" alt="img"/> */}
       </div>
   )
 }
