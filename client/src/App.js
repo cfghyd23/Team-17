@@ -1,42 +1,21 @@
-import React, { useEffect, useState } from 'react'
+// import { useState, useEffect } from 'react'
 import './App.css';
+import Campaigns from './components/Campaigns'
 
-
-
-function App() {
-
-  // let dispatch=useDispatch();
-
-
-  // //updating the redux with the user details on reload from local storage
-  // useEffect(()=>{
-  //  let userObj = JSON.parse(localStorage.getItem('userObj'));
-  //  if(userObj!==null)
-  // {
-  //   let actionObj = login(userObj)
-  //   dispatch(actionObj)
-  // }
-  // },[])
-
-  // let userObj = useSelector(state=>state.user)
-  // //userObj has userObj , isLoggedIn , userType
-  
-
+const campaigns = [{
+  name: 'Blood donation drive in Ranga Reddy',
+  day: '3rd May, Hyderabad Centre',
+}, {
+  name: 'Blood Donation Awareness Run',
+  day: '6th June, Necklace Road'
+},]
+const App = () => {
   return (
-    <div className="App">
-        app
-       
-        {/* <Routes>
-        <Route path='/'  element={<Component1/>}/>
-            <Route path='/feature1'  element={<Feature1/>}/>
-            <Route path='/feature2'  element={<Feature2/>}/>
-            <Route path='/route1'  element={<Component1/>}/>
-            <Route path='/route2' element ={<Component2/>}/>
-            <Route path='/route3'  element={<Component3/>}/>
-           
-        </Routes> */}
-    </div>
-  );
+      <div className='container'>
+         <Campaigns value={ campaigns }/>
+      <img src="./volunteersImg.jpg" alt="img"/>
+      </div>
+  )
 }
 
-export default App;
+export default App
