@@ -1,52 +1,48 @@
-import mongoose from "mongoose";
-
-const Schema = mongoose.Schema;
-
-const userSchema = new Schema({
-    name:{
-        type: String,
-        required:true
+const mongoose = require("mongoose");
+const {Appointment} = require("../models/appointment.js")
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      maxlength: 32,
+      trim: true,
     },
-    
-    email:{
-        type: String,
-        required: true,
-        unique : true
+    isVolunteer: {
+      type: Boolean,
+      default: false
     },
-    password:{
-        type:String,
-        require : true,
-        minLength:8
+    email: {
+      type: String,
+      trim: true,
+      unique: true,
     },
-    contactNo:{
-        type:Number,
-        require : true,
-        
+    password: {
+      type: String,
     },
-    photoURL:{
-      type:String,
-      require : true,
+    mobileNumber: {
+      type: String,
+      trim: true,
+    },
+    bloodGroup: {
+      type: String,
+      trim: true,
+    },
+    height: {
+      type: Number,
+    },
+    weight: {
+      type: Number,
+    },
+    place: {
+      type: String,
+      trim: true,
+    },
+    appointments: {
+      type: [Appointment],
+      default: [],
+    },
   },
-    //cart obj has product id and quantity
-    cart: [{
-        productId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product',
-          required: true,
-        },
-        quantity: {
-          type: Number,
-          required: true,
-          default: 1,
-        },
-        sellerId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Seller',
-          required:true,
-        }
-      }]
-    
+  { timestamps: true }
+);
 
-});
-
-export default mongoose.model("User",userSchema);
+module.exports = mongoose.model("User", userSchema)
