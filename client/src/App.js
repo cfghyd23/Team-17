@@ -1,42 +1,64 @@
 import React, { useEffect, useState } from 'react'
-import './App.css';
-
+import { Route, Routes ,Link} from "react-router-dom";
+import './App.css'
+import Navbar from './Components/User/UserNavBar/Navbar';
+import LoadingAnimation from './Components/LoadingAnimation/LoadingAnimation';
+import Acceptor from './Components/User/Acceptor/Acceptor';
+import Ngo from './Components/Organizations/NGO/Ngo';
+import Bloodbank from './Components/Organizations/BloodBank/Bloodbank';
+import Donor from './Components/User/Donor/Donor';
+import User from './Components/User/User';
+import AboutUs from './Components/AboutUs';
+import UserHome from './Components/User/UserHome';
+import AcceptorList from './Components/Organizations/BloodBank/AcceptorList';
+import CreateCampaign from './Components/Organizations/NGO/CreateCampaign';
+import VolunteerList from './Components/Organizations/NGO/VolunteerList';
+import NgoAbout from './Components/Organizations/NGO/NgoAbout';
+import DonarList from './Components/Organizations/BloodBank/DonarList';
+import AppointmentList from './Components/Organizations/BloodBank/AppointmentList';
 
 
 function App() {
 
-  // let dispatch=useDispatch();
+    //loading 
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+      // Simulate data fetching or any asynchronous operation
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 100);
+    }, []);
 
 
-  // //updating the redux with the user details on reload from local storage
-  // useEffect(()=>{
-  //  let userObj = JSON.parse(localStorage.getItem('userObj'));
-  //  if(userObj!==null)
-  // {
-  //   let actionObj = login(userObj)
-  //   dispatch(actionObj)
-  // }
-  // },[])
-
-  // let userObj = useSelector(state=>state.user)
-  // //userObj has userObj , isLoggedIn , userType
-  
 
   return (
-    <div className="App">
-        app
-       
-        {/* <Routes>
-        <Route path='/'  element={<Component1/>}/>
-            <Route path='/feature1'  element={<Feature1/>}/>
-            <Route path='/feature2'  element={<Feature2/>}/>
-            <Route path='/route1'  element={<Component1/>}/>
-            <Route path='/route2' element ={<Component2/>}/>
-            <Route path='/route3'  element={<Component3/>}/>
-           
-        </Routes> */}
+    <div>
+      
+       {isLoading && <LoadingAnimation />}
+      
+      
+      
+      <div className=''>
+      <Routes>
+      <Route path='/' element={<User/>}/>
+      {/* <Route path="/acceptorhome" element={<Acceptor />} /> */}
+      <Route path="/userhome" element={<UserHome />} />
+       <Route path="/ngohome" element={<Ngo />} />
+       <Route path="/bloodbankhome" element={<Bloodbank />} />
+       <Route path="/donorpage" element={<Donor />} />
+       <Route path="/acceptorpage" element={<Acceptor />} />
+       <Route path="/createcampaign" element={<CreateCampaign />} />
+       <Route path='/acceptorslist' element={<AcceptorList/>}/>
+       <Route path='/donarslist' element={<DonarList/>}/>
+       <Route path="/aboutus" element={<AboutUs />} />
+       <Route path="/volunteerlist" element={<VolunteerList />} />
+       <Route path="/ngoabout" element={<NgoAbout />} />
+       <Route path="/appointmentlist" element={<AppointmentList />} />
+      </Routes>
+      </div>
+      {/* <Footer/> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

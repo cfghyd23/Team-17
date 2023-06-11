@@ -1,13 +1,20 @@
-import React, { useRef ,useMemo} from 'react'
-import { Route, Routes ,Link} from "react-router-dom";
-import { useState } from 'react';
-import { Button } from 'bootstrap';
-import {useForm} from 'react-hook-form'
-function Acceptor() {
+import React from 'react'
 
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import './Donor.css'
+import BloodBankTable from './BloodBankTable'
+import GoogleMapReact from 'google-map-react';
+import Navbar from '../UserNavBar/Navbar';
+
+
+function Donar() {
+
+     
   const [page, setPage] = useState(true)
   const [bloodgroup, setBloodGroup] = useState("")
   const [place, setPlace] = useState("")
+  const [enable,setEnable]=useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
   let API_MAP =""
   const onFormSubmit = (userCredObj) => {
@@ -16,6 +23,44 @@ function Acceptor() {
    
 
   }
+  const apiKey = '';
+
+ 
+  const center = {
+    lat: 17.3850,
+    lng: 78.4867,
+  };
+
+
+  const zoom = 10;
+  let data=[
+    {
+      name:"Blood bank1",
+      area: "Subash Nagar",
+      place:"Karimnagar"
+    },
+    {
+      name:"Blood bank2",
+      area: "Housing board colony",
+      place:"Karimnagar"
+    },
+    {
+      name:"Blood bank3",
+      area: "Bagath Nagar",
+      place:"Karimnagar"
+    },
+    {
+      name:"Blood bank4",
+      area: "Rama Nagar",
+      place:"Nizamabad"
+    },
+    {
+      name:"Blood bank5",
+      area: "Pochamaidhan",
+      place:"Warangal"
+    },
+
+  ]
 
 
 
@@ -23,9 +68,12 @@ function Acceptor() {
 
 
   return (
+    
+     
+    
     <div>
        
-        {/* <Sidebar className='' /> */}
+       <Navbar/>
         
         <div className='row mt-5'>
 
@@ -35,7 +83,7 @@ function Acceptor() {
 
                 <button className='btn btn-danger w-100' onClick={()=>{setPage(true)}}>
 
-                    Request Blood 
+                    Donate Blood 
 
                 </button>
 
@@ -73,25 +121,46 @@ function Acceptor() {
               <option selected value='' >Select Place </option>
               <option  value="Hyderabad">Hyderabad</option>
               <option  value="Warangal">Warangal</option>
-              <option  value="Karimnagar">B-</option>
-              <option  value="Nizamabad">A-</option>
-              <option  value="">AB-</option>
-              <option  value="AB+">AB+</option>
-              <option  value="O+">O+</option>
-              <option  value="O-">O-</option>
+              <option  value="Karimnagar">Karimnagar</option>
+              <option  value="Nizamabad">Nizamabad</option>
+              <option  value="Kurnool">Kurnool</option>
+              <option  value="Khammam">Khammam</option>
+              <option  value="Nalgonda">Nalgonda</option>
+              <option  value="Vizag">Vizag</option>
                                             
               </select>
 
               
-              <button type='submit ' className='btn btn-danger mx-3'>Submit</button>
+              <button type='submit ' className='btn btn-danger mx-3' onClick={()=>{setEnable(true)}}>Submit</button>
+              
               </form>
+              { bloodgroup!="" && place!="" &&
+        (<div>
+  <div
+      style={{
+        height: '400px',
+        width: '40%',
+        margin: '20px',
+        border: '1px solid #ccc',
+        position:'relative',
+        left:'320px',
+        border:'2px solid black;'
+      }}
+    >
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: apiKey }}
+        defaultCenter={center}
+        defaultZoom={zoom}
+      ></GoogleMapReact>
+    </div>
+        <BloodBankTable  data={data}/>
+        </div>)
+}
 
             {/* map  */}
-            <div className='map w-50'>
+            
 
-              </div>
-
-
+            
 
 
 
@@ -115,17 +184,21 @@ function Acceptor() {
 
 
 
-      </div>
+    
 
 
 
-        </div>
-         
-          
+      
+        <br/>
        
+    
+
+</div>
+  
+</div> 
          
     </div>
   )
 }
 
-export default Acceptor
+export default Donar
