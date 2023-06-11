@@ -16,6 +16,8 @@ import NgoAbout from './Components/Organizations/NGO/NgoAbout';
 import DonarList from './Components/Organizations/BloodBank/DonarList';
 import AppointmentList from './Components/Organizations/BloodBank/AppointmentList';
 import Loader from './Loader';
+import Footer from './Components/Footer';
+import Donate from './Components/Donate';
 
 function App() {
   
@@ -46,9 +48,10 @@ function App() {
        <Route path="/volunteerlist" element={<VolunteerList />} />
        <Route path="/ngoabout" element={<NgoAbout />} />
        <Route path="/appointmentlist" element={<AppointmentList />} />
+       <Route path="/donate" element={<Donate />} />
       </Routes>
       </div>
-      {/* <Footer/> */}
+      <Footer className='mt-5'/>
     </div>
   )
 }

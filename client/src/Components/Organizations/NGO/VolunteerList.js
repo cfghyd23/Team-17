@@ -232,7 +232,7 @@ function VolunteerList() {
       <div>
         <select className="option w-25 p-2 dropdown" onChange={(e) => setPlace(e.target.value)}>
           <option value="">Select Place</option>
-          <option value="Hyderabad">Hyderabad</option>
+          <option value="Hyderabad" selected >Hyderabad</option>
           <option value="Warangal">Warangal</option>
           <option value="Karimnagar">Karimnagar</option>
           <option value="Nizamabad">Nizamabad</option>

@@ -52,7 +52,7 @@ function Navbar() {
         <nav className="navbar2 navbar navbar-expand-lg">
         <div className="container d-flex justify-content-between">
                <div>
-                 <h1 className="">It's Code</h1>
+                 <h1 className="">Ayudhaar </h1>
                </div>
                <nav className=" navbar2 navbar navbar-expand-lg ">
                  <div className="container-fluid">
@@ -83,6 +83,11 @@ function Navbar() {
                        
                        <Link to='/profile' className="text-decoration-none text-dark">
                          <i className="fa-solid fa-user nav-icon"></i>
+                       </Link>
+                     </div>
+                     <div>
+                     <Link to='/donate' className="text-decoration-none text-white">
+                         <i className="fa-money fa-user nav-icon"></i> Donate 
                        </Link>
                      </div>
                      
