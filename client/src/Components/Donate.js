@@ -100,9 +100,9 @@ Message or Any feedback
 
 
   {/* <!-- Submit button --> */}
-  <button type="submit" className="btn btn-primary btn-block mb-4" onClick={() => displayRazorpay(money)}>Donate Money</button>
+  
 </form>
-            
+<button  className="btn btn-primary  mb-4 mx-auto text-center " onClick={() => displayRazorpay(money)}>Donate Money</button>
 
         </div>
 
