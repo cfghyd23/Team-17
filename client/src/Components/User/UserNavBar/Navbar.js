@@ -52,7 +52,7 @@ function Navbar() {
         <nav className="navbar2 navbar navbar-expand-lg">
         <div className="container d-flex justify-content-between">
                <div>
-                 <h1 className="text-success">It's Code</h1>
+                 <h1 className="">It's Code</h1>
                </div>
                <nav className=" navbar2 navbar navbar-expand-lg ">
                  <div className="container-fluid">
@@ -93,18 +93,7 @@ function Navbar() {
         </nav>
 
         {/* Dark mode and light mode switch */}
-        <div className="toggle-switch">
-          <input
-            type="checkbox"
-            id="dark-mode-switch"
-            checked={isDarkMode}
-            onChange={toggleDarkMode}
-          />
-          <label htmlFor="dark-mode-switch" className="switch-label">
-            <i className="fas fa-moon"></i>
-            <i className="fas fa-sun"></i>
-          </label>
-        </div>
+        
       </>
     </div>
   );

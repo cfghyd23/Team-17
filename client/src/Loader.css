@@ -1,0 +1,48 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .dot {
+    width: 20px;
+    height: 40px;
+    background-color: red;
+    margin: 0 10px;
+    position: relative;
+    animation: loaderAnimation 1.5s infinite ease-in-out;
+  }
+  
+  .dot:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+  }
+  
+  .dot-1 {
+    animation-delay: 0s;
+  }
+  
+  .dot-2 {
+    animation-delay: 0.3s;
+  }
+  
+  .dot-3 {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes loaderAnimation {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.5);
+    }
+  }
+  

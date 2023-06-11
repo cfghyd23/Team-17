@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Route, Routes ,Link} from "react-router-dom";
 import './App.css'
 import Navbar from './Components/User/UserNavBar/Navbar';
-import LoadingAnimation from './Components/LoadingAnimation/LoadingAnimation';
 import Acceptor from './Components/User/Acceptor/Acceptor';
 import Ngo from './Components/Organizations/NGO/Ngo';
 import Bloodbank from './Components/Organizations/BloodBank/Bloodbank';
@@ -16,26 +15,19 @@ import VolunteerList from './Components/Organizations/NGO/VolunteerList';
 import NgoAbout from './Components/Organizations/NGO/NgoAbout';
 import DonarList from './Components/Organizations/BloodBank/DonarList';
 import AppointmentList from './Components/Organizations/BloodBank/AppointmentList';
-
+import Loader from './Loader';
 
 function App() {
-
-    //loading 
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-      // Simulate data fetching or any asynchronous operation
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 100);
-    }, []);
-
-
+  
+  
 
   return (
+
+    
     <div>
-      
-       {isLoading && <LoadingAnimation />}
-      
+    
+    
+    <Loader />
       
       
       <div className=''>

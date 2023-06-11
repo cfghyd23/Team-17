@@ -52,7 +52,7 @@ function BloodbankNavBar() {
         <nav className="navbar2 navbar navbar-expand-lg">
         <div className="container d-flex justify-content-between">
                <div>
-                 <h1 className="text-success">Blood Warrior</h1>
+                 <h1 className="">Blood Warrior</h1>
                </div>
                <nav className=" navbar2 navbar navbar-expand-lg ">
                  <div className="container-fluid">

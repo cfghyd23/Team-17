@@ -23,7 +23,7 @@ function NgoNavBar() {
                  <div className='d-flex gap-1 my-auto'>
                    <i className="fa-solid fa-envelope text-light contact-info my-auto"></i>
                    <a href="" className="navbar-sm-brand text-light text-decoration-none contact-info">
-                     info@company.com
+                     info@bloodwarriors.com
                    </a>
                    <i className="fa-solid fa-phone contact-info text-light my-auto"></i>
                    <a href="" className="navbar-sm-brand text-white text-decoration-none contact-info">
@@ -52,7 +52,7 @@ function NgoNavBar() {
         <nav className="navbar2 navbar navbar-expand-lg">
         <div className="container d-flex justify-content-between">
                <div>
-                 <h1 className="text-success">Blood Warrior</h1>
+                 <h1 className="">Blood Warrior</h1>
                </div>
                <nav className=" navbar2 navbar navbar-expand-lg ">
                  <div className="container-fluid">
@@ -93,18 +93,7 @@ function NgoNavBar() {
         </nav>
 
         {/* Dark mode and light mode switch */}
-        <div className="toggle-switch">
-          <input
-            type="checkbox"
-            id="dark-mode-switch"
-            checked={isDarkMode}
-            onChange={toggleDarkMode}
-          />
-          <label htmlFor="dark-mode-switch" className="switch-label">
-            <i className="fas fa-moon"></i>
-            <i className="fas fa-sun"></i>
-          </label>
-        </div>
+        
       </>
     </div>
   );

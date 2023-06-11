@@ -9,7 +9,7 @@
   }
   
   .abc .nav-links:hover {
-    color: green !important;
+    color: rgb(180, 69, 41) !important;
   }
   
   .abc .nav-items {
@@ -48,7 +48,7 @@
   }
   
   .dark-mode .nav-links:hover {
-    color: green !important;
+    color: rgb(122, 211, 112) !important;
   }
   
   .dark-mode .nav-icon {
@@ -61,49 +61,7 @@
     color: #000;
   }
   
-  .toggle-switch {
-  position: absolute ;
-  top: 75px;
-  right: 2rem;
-  display: flex;
-  align-items: center;
-}
 
-.toggle-switch input {
-  display: none;
-}
-
-.switch-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 40px;
-  height: 20px;
-  border-radius: 20px;
-  background-color: #212529;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  padding: 2px;
-}
-
-.switch-label i {
-  color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.toggle-switch input:checked + .switch-label {
-  background-color: #ffc107;
-}
-
-.toggle-switch input:checked + .switch-label i:first-child {
-  transform: translateX(-100%);
-}
-
-.toggle-switch input:checked + .switch-label i:last-child {
-  transform: translateX(100%);
-}
-
-  
   
   
   
