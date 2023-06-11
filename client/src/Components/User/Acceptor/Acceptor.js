@@ -64,13 +64,13 @@ function Acceptor() {
 
               <div className='d-flex flex-column gap-5'>
 
-                <button className='btn btn-danger w-100' onClick={()=>{setPage(true)}}>
+                <button className='btn btn-danger w-100 py-4 ms-2' onClick={()=>{setPage(true)}}>
 
                     Request Blood 
 
                 </button>
 
-                <button className='btn btn-danger w-100' onClick={()=>{setPage(false)}}>
+                <button className='btn btn-danger w-100 py-4 ms-2' onClick={()=>{setPage(false)}}>
 
                     My Requests
 

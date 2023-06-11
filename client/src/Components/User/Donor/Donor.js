@@ -81,13 +81,13 @@ function Donar() {
 
               <div className='d-flex flex-column gap-5'>
 
-                <button className='btn btn-danger w-100' onClick={()=>{setPage(true)}}>
+                <button className='btn btn-danger w-100 py-4 m-2' onClick={()=>{setPage(true)}}>
 
                     Donate Blood 
 
                 </button>
 
-                <button className='btn btn-danger w-100' onClick={()=>{setPage(false)}}>
+                <button className='btn btn-danger w-100 py-4 m-2' onClick={()=>{setPage(false)}}>
 
                     My Requests
 
@@ -98,7 +98,7 @@ function Donar() {
 
 
             </div>
-      <div className='col-md-10'>
+      <div className='col-md-10 '>
 
         {page===true &&
         <div>
